@@ -6,6 +6,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    overflow: hidden; /* Garante que não haja barras de rolagem indesejadas */
 }
 
 #digital-clock-transparent {
