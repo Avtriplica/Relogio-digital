@@ -1,6 +1,6 @@
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #ffffff; /* Cor do fundo da página, pode ser alterada conforme necessário */
+    background-color: #ffffff; /* Cor do fundo da página, que pode ser alterada conforme necessário */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,7 +11,7 @@ body {
 #digital-clock-transparent {
     width: 300px;
     height: 150px;
-    background-color: #2e2e2e; /* Cinza escuro */
+    background-color: transparent; /* Fundo transparente */
     border-radius: 10px;
     display: flex;
     justify-content: center;
