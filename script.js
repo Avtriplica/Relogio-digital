@@ -1,39 +1,19 @@
-// Função para adicionar um número ao visor
-function appendNumber(number) {
-    const display = document.getElementById('display');
-    display.value += number;
-}
+document.addEventListener('DOMContentLoaded', () => {
+    function updateClock() {
+        const now = new Date();
 
-// Função para adicionar um operador ao visor
-function appendOperator(operator) {
-    const display = document.getElementById('display');
-    const lastChar = display.value[display.value.length - 1];
+        // Atualiza o relógio digital
+        const hours = now.getHours().toString().padStart(2, '0');
+        const minutes = now.getMinutes().toString().padStart(2, '0');
+        const seconds = now.getSeconds().toString().padStart(2, '0');
+        const timeElement = document.getElementById('time');
 
-    // Evitar operadores duplicados
-    if (['+', '-', '*', '/'].includes(lastChar)) {
-        display.value = display.value.slice(0, -1) + operator;
-    } else {
-        display.value += operator;
+        if (timeElement) {
+            timeElement.innerText = `${hours}:${minutes}:${seconds}`;
+        }
     }
-}
 
-// Função para limpar o visor
-function clearDisplay() {
-    document.getElementById('display').value = '';
-}
-
-// Função para apagar o último caractere
-function deleteLast() {
-    const display = document.getElementById('display');
-    display.value = display.value.slice(0, -1);
-}
-
-// Função para calcular o resultado
-function calculate() {
-    const display = document.getElementById('display');
-    try {
-        display.value = eval(display.value);
-    } catch (e) {
-        display.value = 'Erro';
-    }
-}
+    // Atualiza o relógio a cada segundo
+    setInterval(updateClock, 1000);
+    updateClock(); // Inicializa o relógio
+});
